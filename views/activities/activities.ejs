@@ -1,7 +1,15 @@
-<%- include('partials/header'); -%>
-
+<%- include('../partials/header'); -%>
+<a href="/activities/post" class="button-plan">Create New Plan</a>
 <ul class="recipes">
-  <li class="recipe">
+  <% posts.forEach(post => { %>
+    <li class="recipe">
+      <img src="/smoothie.png" alt="smoothie recipe icon">
+      <h4><%= post.title%></h4>
+      <h6><%= post.time%></h6>
+      <p><%= post.description%></p>
+    </li>
+  <% }) %>
+  <!-- <li class="recipe">
     <img src="/smoothie.png" alt="smoothie recipe icon">
     <h4>Hit the Gym</h4>
     <p>Hoping to work out with y'all and get fit together in March!</p>
@@ -30,7 +38,7 @@
     <img src="/smoothie.png" alt="smoothie recipe icon">
     <h4>Blueno memorial photo</h4>
     <p>Alex and I are going to take photos in front of blueno before they move him away :( Join us Jul.3rd 4pm!</p>
-  </li>
+  </li> -->
 </ul>
 
-<%- include('partials/footer'); -%>
+<%- include('../partials/footer'); -%>
