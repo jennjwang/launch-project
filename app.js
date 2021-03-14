@@ -4,6 +4,7 @@ const authRoutes = require('./routes/authRoutes');
 const postRouter = require('./routes/postRoute');
 const cookieParser = require('cookie-parser');
 const { requireAuth, checkUser } = require('./middleware/authMiddleware');
+const Post = require('./models/post')
 
 const app = express();
 
@@ -25,12 +26,8 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true, useCr
 // routes
 app.get('*', checkUser);
 app.get('/', (req, res) => res.render('home'));
-app.get('/activities', requireAuth, (req, res) => {
-  const posts = [{
-    title: 'Test',
-    time: "Oct.04-Oct.21",
-    description: 'test descriptions'
-  }]
+app.get('/activities', requireAuth, async (req, res) => {
+  const posts = await Post.find()
   res.render('activities/activities', { posts: posts })
 });
 app.use(authRoutes);

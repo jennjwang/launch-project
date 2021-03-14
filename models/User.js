@@ -14,8 +14,14 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: [true, 'Please enter a password'],
         minlength: [6, 'Minimum password length is 6 characters'],
+    },
+    posts: [{
+        type: Object
     }
+    ]
 });
+
+//function that adds post to array of posts
 
 
 // fire a function before doc saved to db

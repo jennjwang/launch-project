@@ -11,7 +11,11 @@ const postSchema = new mongoose.Schema({
     description: {
         type: String,
         required: true
+    },
+    contact: {
+        type: String,
+        required: true
     }
 })
-
+//store the user who make the post
 module.exports = mongoose.model("Post", postSchema)
