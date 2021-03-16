@@ -16,6 +16,6 @@ const postSchema = new mongoose.Schema({
         type: String,
         required: true
     }
-})
+}, { timestamps: true });
 //store the user who make the post
 module.exports = mongoose.model("Post", postSchema)

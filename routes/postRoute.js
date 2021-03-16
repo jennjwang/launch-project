@@ -1,31 +1,12 @@
 const express = require('express');
-const Post = require('./../models/post')
+const postController = require('../controllers/postController');
+
 const router = express.Router();
-const User = require('./../models/User')
 
-router.get('/post', (req, res) => {
-    res.render('activities/post')
-})
-
-router.get('/:id', async (req, res, next) => {
-
-} )
-
-router.post('/', async (req, res) => {
-    const post = new Post({
-        title: req.body.title,
-        time: req.body.time,
-        description: req.body.description,
-        contact: req.body.contact
-    })
-    try {
-        post = await post.save();
-        res.redirect(`/activities/${post.id}`)
-    } catch (e) {
-        res.render('activities/post', {post: post})
-    }
-    
-})
-
+router.get('/create', postController.post_create_get);
+router.get('/', postController.post_index);
+router.post('/', postController.post_create_post);
+router.get('/:id', postController.post_details);
+router.delete('/:id', postController.post_delete);
 
 module.exports = router;
