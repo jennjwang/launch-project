@@ -36,7 +36,7 @@ nav li a{
   text-transform: uppercase;
   font-weight: 700;
   font-size: 0.8em;
-  display: block;
+  display: inline-block;
   padding: 10px 16px;
   letter-spacing: 2px;
 }
@@ -107,6 +107,13 @@ header h3{
   margin-left: 2px;
   color: #999;
 }
+
+.user-info{
+  display: grid;
+  margin: 0 AUTO;
+  width: 50%;
+}
+
 header .btn{
   margin-top: 20px;
   padding: 12px 18px;
