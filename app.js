@@ -5,6 +5,8 @@ const postRouter = require('./routes/postRoute');
 const cookieParser = require('cookie-parser');
 const { requireAuth, checkUser } = require('./middleware/authMiddleware');
 
+require('dotenv').config();
+const port = 3000;
 const app = express();
 
 // middleware
@@ -21,9 +23,9 @@ app.use((req, res, next) => {
 app.set('view engine', 'ejs');
 
 // database connection
-const dbURI = 'mongodb+srv://newUser:abcd1234@cluster0.qujdv.mongodb.net/node-auth';
+const dbURI = process.env.DB_CONN;
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
-  .then((result) => app.listen(3000))
+  .then((result) => app.listen(port))
   .catch((err) => console.log(err));
 
 // routes
