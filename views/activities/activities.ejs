@@ -8,6 +8,7 @@
       <h5>Time: <%= post.time%></h5>
       <p><%= post.description%></p>
       <h5>Reach out through: <%= post.contact%></h5>
+      <a href="/activities/<%= post._id %>" class="btn">Details</a>
     </li>
   <% }) %>
 </ul>

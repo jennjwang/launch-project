@@ -14,7 +14,7 @@ const post_details = (req, res) => {
     const id = req.params.id;
     Post.findById(id)
         .then(result => {
-            res.render('activities/show', { posts: result, title: "Plan details" });
+            res.render('activities/show', { post: result, title: "Plan details" });
         })
         .catch(err => {
             console.log(err);
