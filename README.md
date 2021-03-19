@@ -49,9 +49,13 @@ controller
 
 ## to run code:
 1. cd into root directory
-2. run "nodemon"
+2. npm or yarn install all packages
+3. create .env in root directory and paste the secret key mentioned in project handin
+4. run "nodemon" and open localhost:3000 in browser
 
-## no known bugs
+## Known bugs
+We currently do not have know bugs, but we are hoping to add more features to the website in the future including email verification, connecting users in profile, edit posts, comment and reply to posts,
+embed calendar, etc. 
 
 ## code contribution
 **Aubrey:** log in, sign up, and posts
