@@ -3,6 +3,7 @@ const postController = require('../controllers/postController');
 
 const router = express.Router();
 
+//routing
 router.get('/create', postController.post_create_get);
 router.get('/', postController.post_index);
 router.post('/', postController.post_create_post);

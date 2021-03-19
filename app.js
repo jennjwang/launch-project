@@ -22,7 +22,7 @@ app.use((req, res, next) => {
 // view engine
 app.set('view engine', 'ejs');
 
-// database connection
+// MongoDB database connection
 const dbURI = process.env.DB_CONN;
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
   .then((result) => app.listen(port))

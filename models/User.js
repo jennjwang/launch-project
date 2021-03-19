@@ -25,8 +25,6 @@ const userSchema = new mongoose.Schema({
     // ]
 });
 
-//function that adds post to array of posts
-
 
 // fire a function before doc saved to db
 userSchema.pre('save', async function (next) {
