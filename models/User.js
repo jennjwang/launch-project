@@ -17,8 +17,15 @@ const userSchema = new mongoose.Schema({
     },
     name: {
         type: String,
-    },
+    }
+    //,
+    // posts: [{
+    //     type: Object
+    // }
+    // ]
 });
+
+//function that adds post to array of posts
 
 
 // fire a function before doc saved to db
