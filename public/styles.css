@@ -177,3 +177,10 @@ footer{
   margin-top: 120px;
   color: #aaa;
 }
+
+HR {
+  width: 20%;
+  height: 3px;
+  color:gray;
+  background-color:gray
+}
